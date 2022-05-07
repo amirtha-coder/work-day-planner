@@ -1,5 +1,6 @@
 // Working hours array
 // declare an on ready function
+const mainElement = document.getElementById("main");
 
 const renderDate = () => {
   const today = moment();
@@ -11,7 +12,11 @@ const renderDate = () => {
   console.log(dates);
 };
 
-$(window).on("load", renderDate());
+const renderTimeBlocks = () => {
+mainElement.append = 
+};
+
+$(window).on("load", renderDate(), renderTimeBlocks());
 
 // declare render data function
 // render time blocks
