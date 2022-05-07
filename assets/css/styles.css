@@ -123,10 +123,6 @@ textarea {
   color: white;
 }
 
-#timeDiv {
-  background-color: var(--bs-info);
-}
-
 #saveDiv {
   background-color: var(--bs-secondary);
 }
