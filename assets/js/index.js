@@ -43,40 +43,48 @@ const workingHours = [
     key: 17,
   },
 ];
+const currentHour = moment().hour();
 
 // Call local storage
 const readFromLocalStorage = (key, defaultValue) => {
-  const dataFromLS = JSON.parse(localStorage.getItem(key));
+  // get from LS using key name
+  const dataFromLS = localStorage.getItem(key);
 
-  if (!dataFromLS) {
-    localStorage.setItem(key, JSON.stringify([]));
+  // parse data from LS
+  const parsedData = JSON.parse(dataFromLS);
+
+  if (parsedData) {
+    return parsedData;
+  } else {
+    return defaultValue;
   }
 };
 
 const writeToLocalStorage = (key, value) => {
   // convert value to string
   const stringifiedValue = JSON.stringify(value);
-
+  console.log("works");
   // set stringified value to LS for key name
   localStorage.setItem(key, stringifiedValue);
 };
 
 const renderDate = () => {
   const today = moment();
-  const formattedToday = today.format("ddd, Do MMM, YYYY h:mmA");
-  console.log(formattedToday);
+  const newDate = today.format("ddd, Do MMM, YYYY h:mmA");
+  console.log(newDate);
+  const dates = $(`<p></p>`);
+  dates.empty().append(newDate);
+  $("#header").append(newDate);
 
-  const dates = $(`<p></p>`).text(formattedToday);
-  $("#header").append(dates);
   console.log(dates);
 };
-
 const renderTimeBlocks = () => {
-  const getEventForTimeBlock = (workingHour) => {
-    return "";
+  const getEventForTimeBlock = (workingDay) => {
+    const planner = readFromLocalStorage("planner", {});
+    console.log("working-yeah");
+    return planner[workingDay] || "";
   };
   const getClassName = (workingHour) => {
-    const currentHour = moment().hour();
     if (workingHour === currentHour) {
       return "present";
     }
@@ -109,14 +117,6 @@ const renderTimeBlocks = () => {
   };
 
   workingHours.forEach(renderTimeBlock);
-
-  // if (workingHours[i]).key.value === " "
-  // } else {
-  // }
-  // const events = readFromLocalStorage(workingHourskey, value);
-  // console.log(events);
-
-  console.log("working");
 };
 
 const onReady = () => {
@@ -132,7 +132,12 @@ const saveToLS = (event) => {
     const key = target.attr("data-key");
     console.log(key);
     const value = $(`textarea[data-textarea-key='${key}']`).val().trim();
+    const planner = readFromLocalStorage("planner", {});
+
+    planner[key] = value;
     console.log(value);
+
+    writeToLocalStorage("'planner", planner);
   }
 };
 
