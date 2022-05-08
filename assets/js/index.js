@@ -78,7 +78,7 @@ const storeInLS = () => {};
 const renderTimeBlocks = () => {
   $("#main").on("click", storeInLS());
   for (let i = 0; i < workingHours.length; i += 1) {
-    const timeBlocks = `<section class="d-flex bd-highlight mt-1 mb-1 ">
+    const timeBlocks = `<section class="d-flex bd-highlight mt-1 mb-1 screen">
         <span class="p-2 bd-highlight times" id="timeDiv">${workingHours[i].label}</span>
   <div class="p-2 flex-grow-1 bd-highlight"id="eventDiv"> 
     <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key = ${workingHours[i].key} > ${workingHours[i].key.value}</textarea>
@@ -86,7 +86,7 @@ const renderTimeBlocks = () => {
   <button class="p-2 bd-highlight save" id="saveDiv-${workingHours[i].key}" type="submit" data-key = ${workingHours[i].key}><img src="./assets/images/save.png" alt="click to save"></button>
       </section>`;
 
-    console.log($("#saveDiv-[i]").data("key"));
+    console.log($("#saveDiv-10").data("key"));
 
     const timeOnBlock = $(timeBlocks).attr(
       "data-answer-key",
@@ -94,11 +94,12 @@ const renderTimeBlocks = () => {
     );
 
     if (currentTime > timeOnBlock) {
-      $("#eventDiv").addClass("past");
+      $(".d-flex bd-highlight mt-1 mb-1").addClass("past");
+      console.log("if is working");
     } else if (currentTime < timeOnBlock) {
-      $("#eventDiv").addClass("future");
+      $(".d-flex bd-highlight mt-1 mb-1").addClass("future");
     } else {
-      $("#eventDiv").addClass("present");
+      $(".d-flex bd-highlight mt-1 mb-1").addClass("present");
     }
 
     //   if (workingHours[i]).key.value === " "{
