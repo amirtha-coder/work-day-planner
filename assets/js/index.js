@@ -1,11 +1,8 @@
 // Global Declarations
 // a current time function to compare key for past, present and future
-const currentTime = moment().format("H");
-console.log(currentTime);
-
+const mainElement = $("#time-blocks");
 let workingHoursIndex = 0;
 // declare an on ready function
-const mainElement = $("#main");
 
 // Working hours array
 const workingHours = [
@@ -47,10 +44,10 @@ const workingHours = [
   },
 ];
 
+// Call local storage
 const readFromLocalStorage = (key, defaultValue) => {
   const dataFromLS = JSON.parse(localStorage.getItem(key));
-  // check if highscores exists in LS
-  // if false then set highscores to empty array in LS
+
   if (!dataFromLS) {
     localStorage.setItem(key, JSON.stringify([]));
   }
@@ -74,46 +71,73 @@ const renderDate = () => {
   console.log(dates);
 };
 
-const storeInLS = () => {};
 const renderTimeBlocks = () => {
-  $("#main").on("click", storeInLS());
-  for (let i = 0; i < workingHours.length; i += 1) {
-    const timeBlocks = `<section class="d-flex bd-highlight mt-1 mb-1 screen">
-        <span class="p-2 bd-highlight times" id="timeDiv">${workingHours[i].label}</span>
-  <div class="p-2 flex-grow-1 bd-highlight"id="eventDiv"> 
-    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key = ${workingHours[i].key} > ${workingHours[i].key.value}</textarea>
-    </div>
-  <button class="p-2 bd-highlight save" id="saveDiv-${workingHours[i].key}" type="submit" data-key = ${workingHours[i].key}><img src="./assets/images/save.png" alt="click to save"></button>
-      </section>`;
-
-    console.log($("#saveDiv-10").data("key"));
-
-    const timeOnBlock = $(timeBlocks).attr(
-      "data-answer-key",
-      workingHours[i].key
-    );
-
-    if (currentTime > timeOnBlock) {
-      $(".d-flex bd-highlight mt-1 mb-1").addClass("past");
-      console.log("if is working");
-    } else if (currentTime < timeOnBlock) {
-      $(".d-flex bd-highlight mt-1 mb-1").addClass("future");
-    } else {
-      $(".d-flex bd-highlight mt-1 mb-1").addClass("present");
+  const getEventForTimeBlock = (workingHour) => {
+    return "";
+  };
+  const getClassName = (workingHour) => {
+    const currentHour = moment().hour();
+    if (workingHour === currentHour) {
+      return "present";
     }
+    if (workingHour > currentHour) {
+      return "future";
+    }
+    return "past";
+  };
 
-    //   if (workingHours[i]).key.value === " "{
+  const renderTimeBlock = (workingHour) => {
+    const timeBlock = `<div class="d-flex bd-highlight my-1 ${getClassName(
+      workingHour.key
+    )}">
+        <span class="p-2 bd-highlight times" id="timeDiv">${
+          workingHour.label
+        }</span>
+  <div class="p-2 flex-grow-1 bd-highlight"id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key = ${
+      workingHour.key
+    } > ${getEventForTimeBlock(workingHour.key)}</textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="save-div" type="submit" data-key = "${
+    workingHour.key
+  }"
+  }"><img src="./assets/images/save.png" alt="click to save" data-key = "${
+    workingHour.key
+  }" /></button>
+      </div>`;
+    mainElement.append(timeBlock);
+  };
 
-    //   } else {
-    //   }
-    //   const events = readFromLocalStorage(workingHourskey, value);
-    //   console.log(events);
-    mainElement.append(timeBlocks);
-    console.log("working");
+  workingHours.forEach(renderTimeBlock);
+
+  // if (workingHours[i]).key.value === " "
+  // } else {
+  // }
+  // const events = readFromLocalStorage(workingHourskey, value);
+  // console.log(events);
+
+  console.log("working");
+};
+
+const onReady = () => {
+  renderDate();
+  renderTimeBlocks();
+};
+
+const saveToLS = (event) => {
+  const target = $(event.target);
+
+  if (target.is("button") || target.is("img")) {
+    console.log("click");
+    const key = target.attr("data-key");
+    console.log(key);
+    const value = $(`textarea[data-textarea-key='${key}']`).val().trim();
+    console.log(value);
   }
 };
 
-$(window).on("load", renderDate(), renderTimeBlocks());
+mainElement.click(saveToLS);
+$(document).ready(onReady);
 
 // declare render data function
 // render time blocks
