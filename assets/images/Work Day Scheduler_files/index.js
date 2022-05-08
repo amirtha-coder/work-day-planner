@@ -83,19 +83,13 @@ const renderTimeBlocks = () => {
   <div class="p-2 flex-grow-1 bd-highlight"id="eventDiv"> 
     <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key = ${workingHours[i].key} > ${workingHours[i].key.value}</textarea>
     </div>
-  <button class="p-2 bd-highlight save" id="saveDiv-${workingHours[i].key}" type="submit" data-key = ${workingHours[i].key}><img src="./assets/images/save.png" alt="click to save"></button>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit" data-key = ${workingHours[i].key}><img src="./assets/images/save.png" alt="click to save"></button>
       </section>`;
 
-    console.log($("#saveDiv-[i]").data("key"));
-
-    const timeOnBlock = $(timeBlocks).attr(
-      "data-answer-key",
-      workingHours[i].key
-    );
-
-    if (currentTime > timeOnBlock) {
-      $("#eventDiv").addClass("past");
-    } else if (currentTime < timeOnBlock) {
+    if (currentTime > workingHours[i].key) {
+      const timePast = $("#eventDiv").addClass("past");
+      console.log(timePast);
+    } else if (currentTime < workingHours[i].key) {
       $("#eventDiv").addClass("future");
     } else {
       $("#eventDiv").addClass("present");

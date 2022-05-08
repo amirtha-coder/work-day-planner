@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5501/index.html -->
+<html lang="en"><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="mix-blend-mode: darken; position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./Work Day Scheduler_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="./Work Day Scheduler_files/css" rel="stylesheet">
+    <link rel="stylesheet" href="./Work Day Scheduler_files/styles.css">
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body data-new-gr-c-s-check-loaded="14.1058.0" data-gr-ext-installed="" data-new-gr-c-s-loaded="14.1058.0"> 
+    <header class="jumbotron" id="header">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    <p>Sun, 8th May, 2022 1:50PM</p></header>
+    <main class="container" id="main">
+    
+    <!-- timeblocks go here -->
+      <!-- <section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">9AM</span>
+  <div class="p-2 flex-grow-1 bd-highlight past"id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2"></textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit"><img src="./assets/images/save.png" alt="click to save"></button>
+      </section>
+
+
+
+ <section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">10AM</span>
+  <div class="p-2 flex-grow-1 bd-highlight past"id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2"></textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit"><img src="./assets/images/save.png" alt="click to save"></button>
+      </section>
+
+
+
+       <section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">11AM</span>
+  <div class="p-2 flex-grow-1 bd-highlight past"id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2"></textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit"><img src="./assets/images/save.png" alt="click to save"></button>
+      </section>
+
+
+ <section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">12PM</span>
+  <div class="p-2 flex-grow-1 bd-highlight past"id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2"></textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit"><img src="./assets/images/save.png" alt="click to save"></button>
+      </section>
+
+
+ <section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">1PM</span>
+  <div class="p-2 flex-grow-1 bd-highlight past"id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2"></textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit"><img src="./assets/images/save.png" alt="click to save"></button>
+      </section>
+
+
+ <section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">2PM</span>
+  <div class="p-2 flex-grow-1 bd-highlight past"id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2"></textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit"><img src="./assets/images/save.png" alt="click to save"></button>
+      </section>
+
+
+ <section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">3PM</span>
+  <div class="p-2 flex-grow-1 bd-highlight past"id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2"></textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit"><img src="./assets/images/save.png" alt="click to save"></button>
+      </section>
+
+
+ <section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">4PM</span>
+  <div class="p-2 flex-grow-1 bd-highlight past"id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2"></textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit"><img src="./assets/images/save.png" alt="click to save"></button>
+      </section>
+
+       <section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">5PM</span>
+  <div class="p-2 flex-grow-1 bd-highlight past"id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2"></textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit"><img src="./assets/images/save.png" alt="click to save"></button>
+      </section> -->
+
+
+
+     
+    <section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">9AM</span>
+  <div class="p-2 flex-grow-1 bd-highlight past present future" id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key="9" spellcheck="false"> undefined</textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit" data-key="9"><img src="./Work Day Scheduler_files/save.png" alt="click to save"></button>
+      </section><section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">10AM</span>
+  <div class="p-2 flex-grow-1 bd-highlight" id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key="10" spellcheck="false"> undefined</textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit" data-key="10"><img src="./Work Day Scheduler_files/save.png" alt="click to save"></button>
+      </section><section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">11AM</span>
+  <div class="p-2 flex-grow-1 bd-highlight" id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key="11" spellcheck="false"> undefined</textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit" data-key="11"><img src="./Work Day Scheduler_files/save.png" alt="click to save"></button>
+      </section><section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">12AM</span>
+  <div class="p-2 flex-grow-1 bd-highlight" id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key="12" spellcheck="false"> undefined</textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit" data-key="12"><img src="./Work Day Scheduler_files/save.png" alt="click to save"></button>
+      </section><section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">1PM</span>
+  <div class="p-2 flex-grow-1 bd-highlight" id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key="13" spellcheck="false"> undefined</textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit" data-key="13"><img src="./Work Day Scheduler_files/save.png" alt="click to save"></button>
+      </section><section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">2PM</span>
+  <div class="p-2 flex-grow-1 bd-highlight" id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key="14" spellcheck="false"> undefined</textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit" data-key="14"><img src="./Work Day Scheduler_files/save.png" alt="click to save"></button>
+      </section><section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">3PM</span>
+  <div class="p-2 flex-grow-1 bd-highlight" id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key="15" spellcheck="false"> undefined</textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit" data-key="15"><img src="./Work Day Scheduler_files/save.png" alt="click to save"></button>
+      </section><section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">4PM</span>
+  <div class="p-2 flex-grow-1 bd-highlight" id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key="16" spellcheck="false"> undefined</textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit" data-key="16"><img src="./Work Day Scheduler_files/save.png" alt="click to save"></button>
+      </section><section class="d-flex bd-highlight mt-1 mb-1 ">
+        <span class="p-2 bd-highlight times" id="timeDiv">5PM</span>
+  <div class="p-2 flex-grow-1 bd-highlight" id="eventDiv"> 
+    <textarea class="form-control no-color " id="exampleFormControlTextarea1" rows="2" data-textarea-key="17" spellcheck="false"> undefined</textarea>
+    </div>
+  <button class="p-2 bd-highlight save" id="saveDiv" type="submit" data-key="17"><img src="./Work Day Scheduler_files/save.png" alt="click to save"></button>
+      </section></main>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+ <script src="./Work Day Scheduler_files/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./Work Day Scheduler_files/jquery.min.js"></script>
+        
+    <script src="./Work Day Scheduler_files/moment.min.js"></script>
+<script src="./Work Day Scheduler_files/index.js"> </script>
+  <!-- Code inject--></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration><grammarly-mirror data-grammarly-shadow-root="true" class="cGcvT"></grammarly-mirror></html>
