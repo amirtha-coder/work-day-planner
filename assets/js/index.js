@@ -1,11 +1,10 @@
 // Global Declarations
 // a current time function to compare key for past, present and future
 const mainElement = $("#time-blocks");
-let workingHoursIndex = 0;
 // declare an on ready function
 
 // Working hours array
-const workingHours = [
+const workingHour = [
   {
     label: "9AM",
     key: 9,
@@ -49,7 +48,7 @@ const currentHour = moment().hour();
 const readFromLocalStorage = (key, defaultValue) => {
   // get from LS using key name
   const dataFromLS = localStorage.getItem(key);
-
+  console.log("works");
   // parse data from LS
   const parsedData = JSON.parse(dataFromLS);
 
@@ -63,7 +62,7 @@ const readFromLocalStorage = (key, defaultValue) => {
 const writeToLocalStorage = (key, value) => {
   // convert value to string
   const stringifiedValue = JSON.stringify(value);
-  console.log("works");
+
   // set stringified value to LS for key name
   localStorage.setItem(key, stringifiedValue);
 };
@@ -79,10 +78,9 @@ const renderDate = () => {
   console.log(dates);
 };
 const renderTimeBlocks = () => {
-  const getEventForTimeBlock = (workingDay) => {
+  const getEventForTimeBlock = (workingHour) => {
     const planner = readFromLocalStorage("planner", {});
-    console.log("working-yeah");
-    return planner[workingDay] || "";
+    return planner[workingHour] || "";
   };
   const getClassName = (workingHour) => {
     if (workingHour === currentHour) {
@@ -116,10 +114,11 @@ const renderTimeBlocks = () => {
     mainElement.append(timeBlock);
   };
 
-  workingHours.forEach(renderTimeBlock);
+  workingHour.forEach(renderTimeBlock);
 };
 
 const onReady = () => {
+  JSON.parse(localStorage.getItem("planner"));
   renderDate();
   renderTimeBlocks();
 };
@@ -129,10 +128,10 @@ const saveToLS = (event) => {
 
   if (target.is("button") || target.is("img")) {
     console.log("click");
+
     const key = target.attr("data-key");
     console.log(key);
     const value = $(`textarea[data-textarea-key='${key}']`).val().trim();
-    const planner = readFromLocalStorage("planner", {});
 
     planner[key] = value;
     console.log(value);
@@ -143,6 +142,9 @@ const saveToLS = (event) => {
 
 mainElement.click(saveToLS);
 $(document).ready(onReady);
+
+// $(window).load(readFromLocalStorage());
+// window.location.reload(renderDate(), renderTimeBlocks());
 
 // declare render data function
 // render time blocks

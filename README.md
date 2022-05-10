@@ -1,32 +1,27 @@
 # work-day-planner
 
-A planner that displays time blocked activities in a normal work day.
+A planner that uses jquery and javascript.
 
-Add event for each hour of the day?
-How many hours do we want? (9AM-5PM)
-Use jQuery
-Can use Bootstrap
-Use moment js https://cdnjs.com/libraries/moment.js
-ONLY FOR THE CURRENT DAY
+## Deployed URL
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js" integrity="sha512-x/vqovXY/Q4b+rNjgiheBsA/vbWA3IVvsS8lkQSX1gQ4ggSJx38oI2vREZXpTzhAv6tNUaX81E7QBBzkpDQayA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+Click the link [here](https://amirtha-coder.github.io/work-day-planner/) to access the webpage.
 
-User Journey
+## Screenshots
 
-- On page load the current day should be displayed on the page (Friday, 29th April, 2022)
-- Use moment js format method to format your date
-  https://momentjs.com/docs/#/displaying/format/
+### Work-day-planner![planner](./assets/images/screenshot.png)
 
-- On page load all working hours timeblocks should render
+## Technologies
 
-- As a user when I type in the event for a specific time and click on the save button for that time then the event is stored in LS
+- html
+- css
+- coolers
+- javascript
+- jquery
+- git
 
-Timeblock
+## Previous projects
 
-- label (2PM or 14:00 or 14)
-- textarea for your notes
-- button to save the note in LS
-- colour coded (past: grey | present: red | future: green)
-
-When the user loads the page get the current hour using moment js
-For each time block when you create the timeblock compare the hour with the current hour
+- #### Project 1: semantic HTML and adding CSS to refactor the webpage for a marketing agency. Click the link [here](https://winner-am1.github.io/semantic_html_refactor/) to access the webpage.
+- #### Project 2: My professional portfolio created using HTML and CSS.Click the link [here](https://amirtha-coder.github.io/amirtha-portfolio/) to access the webpage.
+- #### Project 3: My random password generator created via javascript. Click the link [here](https://amirtha-coder.github.io/random-password-generator/) to access the webpage.
+- #### Project 4: To create this timed code quiz I had to used HTML, CSS, Javascript and Web APIs.Click the link [here](https://amirtha-coder.github.io/timed-code-quiz/) to access the webpage
