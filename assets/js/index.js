@@ -2,7 +2,17 @@
 // a current time function to compare key for past, present and future
 const mainElement = $("#time-blocks");
 // declare an on ready function
-
+const defaultPlanner = {
+  9: "",
+  10: "",
+  11: "",
+  12: "",
+  13: "",
+  14: "",
+  15: "",
+  16: "",
+  17: "",
+};
 // Working hours array
 const workingHour = [
   {
@@ -79,8 +89,8 @@ const renderDate = () => {
 };
 const renderTimeBlocks = () => {
   const getEventForTimeBlock = (workingHour) => {
-    const planner = readFromLocalStorage("planner", {});
-    return planner[workingHour] || "";
+    const planner = readFromLocalStorage("planner");
+    return planner ? planner[workingHour] : "";
   };
   const getClassName = (workingHour) => {
     if (workingHour === currentHour) {
@@ -118,14 +128,18 @@ const renderTimeBlocks = () => {
 };
 
 const onReady = () => {
-  JSON.parse(localStorage.getItem("planner"));
+  const plannerSearch = JSON.parse(localStorage.getItem("planner"));
+  if (!plannerSearch) {
+    writeToLocalStorage("planner", defaultPlanner);
+  }
+
   renderDate();
   renderTimeBlocks();
 };
 
 const saveToLS = (event) => {
   const target = $(event.target);
-
+  const planner = readFromLocalStorage("planner");
   if (target.is("button") || target.is("img")) {
     console.log("click");
 
@@ -136,7 +150,7 @@ const saveToLS = (event) => {
     planner[key] = value;
     console.log(value);
 
-    writeToLocalStorage("'planner", planner);
+    writeToLocalStorage("planner", planner);
   }
 };
 
